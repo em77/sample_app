@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionController::TestCase
+  
+  def setup
+    @base_title = "Sample App"
+  end
+  
   test "should get home" do
     get :home
     assert_response :success
