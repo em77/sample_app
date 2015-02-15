@@ -34,4 +34,11 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal @user.name, name
     assert_equal @user.email, email
   end
+  
+  test "friendly forwarding should not happen after first login attempt fails" do
+    get edit_user_path(@user)
+    log_in_as(@user, password: "wrong")
+    log_in_as(@user)
+    assert session[:forwarding_url] = user_path(@user)
+  end
 end
