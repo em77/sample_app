@@ -5,7 +5,9 @@
 
 <ul class = "users">
   <% @users.each do |user| %>
-    <%= render @users %>
+    <!-- Says in tutorial to use "render @users" but that makes the user list on each paginated page
+    repeat 5 times -->
+    <%= render user %>
   <% end %>
 </ul>
 
